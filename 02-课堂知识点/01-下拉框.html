@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./libs/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <!-- 
+        select      下拉选择
+        option      选项
+
+        结构细节：
+            value  属性值有数据
+            option 标签内有文本
+     -->
+    <select name="cate" id="myCate">
+        <option value="0">所有分类</option>
+        <option value="1">吴彦祖</option>
+        <option value="2">刘德华</option>
+        <option value="3">周润发</option>
+    </select>
+
+
+    <select name="cate" id="myCate2">
+        <option>所有分类</option>
+        <option>吴彦祖</option>
+        <option>刘德华</option>
+        <option>周润发</option>
+    </select>
+
+    <script>
+
+        // 目标：获取 select 下拉框的值
+        console.log($('#myCate').val());
+        console.log($('#myCate2').val());
+
+        // select 获取值：
+        //      1. 优先获取选中的 option 标签 value 属性的值。
+        //      2. 可通过 selected 属性改变下拉选中项，同时也会影响到 select 获取到的值
+        //      3. 如果 option 标签没有 value 值，获取到的就是 option 标签内的文本。(了解)
+        
+
+        
+
+    </script>
+</body>
+</html>
