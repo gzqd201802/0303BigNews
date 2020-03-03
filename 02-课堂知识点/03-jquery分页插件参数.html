@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link 标签引入 BS 样式 -->
+    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
+    <script src="./libs/jquery-1.12.4.min.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./libs/jquery.twbsPagination.js"></script>
+</head>
+
+<body>
+    <h1>分页插件需要依赖, jquery 和 BootStrap，所以都要引入，而且要注意先后顺序</h1>
+
+    <!-- pagination-sm 分页容器的类名 -->
+    <ul id="pagination-demo" class="pagination-sm"></ul>
+    <script>
+
+        // $('#pagination-demo')   选中需要放分页插件的容器
+        // .twbsPagination()       启动分页插件
+        $('#pagination-demo').twbsPagination({
+            // 总页数
+            totalPages: 35,
+            // 可见的页数上限
+            visiblePages: 7,
+            // 把默认的四个英文按钮修改成中文
+            first:'首页',
+            prev:'上一页',
+            next:'下一页',
+            last:'尾页',
+            // 当页码点击时候触发的回调函数
+            onPageClick: function (event, page) {
+                console.log('event', event);
+                console.log('page', page);
+            }
+        });
+
+        // 注意事项：
+        //      1. 当插件启动的时候，第一页会自动被插件点击了一次。
+
+    </script>
+</body>
+
+</html>
