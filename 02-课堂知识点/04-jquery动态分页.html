@@ -15,6 +15,7 @@
 <body>
     <h1>分页插件需要依赖, jquery 和 BootStrap，所以都要引入，而且要注意先后顺序</h1>
     动态总页数：<input type="text" id="total" value="10">
+    动态的当前页：<input type="text" id="current" value="1">
     <button>点击动态生成分页器</button>
     <!-- pagination-sm 分页容器的类名 -->
     <div class="text-center">
@@ -26,7 +27,9 @@
         $('button').click(function(){
 
             // 获取新的总页数
-            const total = $('#total').val();
+            const total = Number($('#total').val());
+            const current = Number($('#current').val());
+
 
             // 1. 先销毁旧的分页器，传入字符串 destroy 即可
             $('#pagination-demo').twbsPagination('destroy');
@@ -37,6 +40,7 @@
                 // 可见的页数上限
                 visiblePages: 7,
                 // 当前显示第几页
+                startPage: current,
                 // 把默认的四个英文按钮修改成中文
                 first:'首页',
                 prev:'上一页',
